@@ -1,0 +1,106 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // Add an event listener to the form on page load
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Get user input
+        var amount = parseFloat(document.getElementById('amount').value);
+        var fromCurrency = document.getElementById('selector').value;
+        var toCurrency = document.getElementById('selector1').value;
+
+        // Validate the input
+        if (isNaN(amount)) {
+            alert('Please enter a valid amount.');
+            return;
+        }
+
+        // Perform the currency conversion
+        var convertedAmount = convertCurrency(amount, fromCurrency, toCurrency);
+
+        // Display the result
+        displayResult(convertedAmount);
+    });
+});
+
+function convertCurrency(amount, fromCurrency, toCurrency) {
+    // You would typically fetch the latest exchange rates from an API
+    // For simplicity, let's assume a basic conversion logic here
+    var exchangeRates = {
+        USD: 1,
+        AED: 3.67,
+        ARS: 356.95,
+        AUD: 1.53,
+        BGN: 1.79,
+        BRL: 4.90,
+        BSD: 1,
+        CAD: 1.37,
+        CHF: 0.88,
+        CLP: 873.38,
+        CNY: 7.15,
+        COP: 4063.50,
+        CZK: 22.35,
+        DKK: 6.84,
+        DOP: 56.74,
+        EGP: 30.85,
+        EUR: 0.92,
+        FJD: 2.25,
+        GBP: 0.80,
+        GTQ: 7.83,
+        HKD: 7.80,
+        HRK: 7.04,
+        HUF: 348.07,
+        IDR: 15570,
+        ILS: 3.74,
+        INR: 83.35,
+        ISK: 140.12,
+        JPY: 149.47,
+        KRW: 1304.96,
+        KZT: 461.24,
+        MVR: 15.42,
+        MXN: 17.18,
+        MYR: 4.68,
+        NOK: 10.78,
+        NZD: 1.65,
+        PAB: 1,
+        PEN: 3.72,
+        PHP: 55.41,
+        PKR: 284.65,
+        PLN: 4.01,
+        PYG: 7452.25,
+        RON: 4.56,
+        RUB: 88.62,
+        SAR: 3.75,
+        SEK: 10.50,
+        SGD: 1.34,
+        THB: 35.43,
+        TRY: 28.86,
+        TWD: 31.64,
+        UAH: 35.95,
+        UYU: 39.07,
+        ZAR: 18.82,
+        // Add rates for other currencies as needed
+    };
+    
+
+    // Check if the currencies are valid
+    if (!exchangeRates[fromCurrency] || !exchangeRates[toCurrency]) {
+        alert('Invalid currency selection.');
+        return null;
+    }
+
+    // Perform the conversion
+    var convertedAmount = (amount / exchangeRates[fromCurrency]) * exchangeRates[toCurrency];
+    return convertedAmount.toFixed(2); // Limit to 2 decimal places
+}
+
+function displayResult(convertedAmount) {
+    // Update the result on the webpage
+    var resultElement = document.querySelector('.finalValue');
+    resultElement.textContent = convertedAmount;
+
+    // Show the result container
+    var resultContainer = document.getElementById('finalAmount');
+    resultContainer.style.display = 'block';
+}
