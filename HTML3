@@ -1,232 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./static/images/icon.png" type="image/x-icon">
-    <title>CURRENCY CONVERTER</title>
-    <script async defer src="./static/js/cc.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css1k">
-    <link  type="text/css" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <script async defer src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script async defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script async defer src="./static/js/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="./static/css/web.css">
-    
-</head>
-<body>
-    <div id="nav">
-<div id="navpart1">
-</div>
-    <div id="navpart2">
-        <div id="links">
-            <a href='/templates/aboutus3'>KNOW OUR TEAM</a>
-            <a href='/templates/bc'>CONTACT US</a>
-            <a href='/templates/g'>FEEDBACK</a>
-            <a href='/templates/rateus'>RATE US</a>
-            <a href='/templates/cart'>SHOP <i class="ri-shopping-cart-fill"></i></a>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Rating Form</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/rateuss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <div class="text">Thanks for rating us!</div>
+        <div class="edit">EDIT</div>
+      </div>
+      <div class="star-widget">
+        <input type="radio" name="rate" id="rate-5" title="rateme">
+        <label for="rate-5" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-4" title="rateme">
+        <label for="rate-4" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-3" title="rateme">
+        <label for="rate-3" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-2" title="rateme">
+        <label for="rate-2" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-1" title="rateme">
+        <label for="rate-1" class="fas fa-star"></label>
+        <form action="#">
+          <header></header>
+          <div class="textarea">
+            <textarea cols="30" placeholder="Describe your experience.."></textarea>
+          </div>
+          <div class="btn">
+            <button type="submit">Post</button>
+          </div>
+        </form>
+      </div>
     </div>
-    
- </div>
-</div>
+    <script async defer>
+      const btn = document.querySelector("button");
+      const post = document.querySelector(".post");
+      const widget = document.querySelector(".star-widget");
+      const editBtn = document.querySelector(".edit");
+      btn.onclick = ()=>{
+        widget.style.display = "none";
+        post.style.display = "block";
+        editBtn.onclick = ()=>{
+          widget.style.display = "block";
+          post.style.display = "none";
+        }
+        return false;
+      }
+    </script>
 
-    <div id="cursor"></div>
-    <div id="main">
-        <div id="page1">
-            <h1>CURRENCY </h1>
-            <h1>CONVERTER</h1>
-            <div id="video-container">
-                <div id="play">
-                    PLAY
-                </div>  
-                <video autoplay loop muted src="./static/videos/NewFile.mp4"></video>
-            </div>
-       
-        </div>
-        
-        <div id="page2">
-            <br>
-            <div id="elem1" class="elem">
-            <!-- <div class="insideelem1">AMERICAN DOLLAR</div> -->
-            <img data-scroll data-scroll-speed="1" src="./static/images/dollar1.jpg" alt="">
-            <div data-scroll data-scroll-speed="-1" class="dets" id="#e1">
-                <span class="text-center">AMERICAN DOLLAR</span>
-                <br>
-                <span class="text-center">USD$</span>
-            </div>
-            
-            </div>
-            <div id="elem2" class="elem">
-                <img data-scroll data-scroll-speed="1" src="./static/images/ruppee.jpg" alt="">
-            <div data-scroll data-scroll-speed="-1" class="dets">
-                <span class="text-center">INDIAN RUPEES</span>
-                <br>
-                <span class="text-center">INR(rs.)</span>
-            </div>
-            </div>
-            <div id="elem3" class="elem">
-                <img data-scroll data-scroll-speed="1" src="./static/images/canada.jpg" alt="">
-            <div data-scroll data-scroll-speed="-1" class="dets">
-                <span class="text-center">CANADIAN DOLLAR</span> 
-                <br>  
-                <span class="text-center">CAD$</span>  
-            </div>
-            </div>
-        </div>
-    
-
-    <section class="asf">
-
-    <font size="+4"><h1 class="animate__animated animate___bounce" id="maintitle">CURRENCY CONVERTER</h1></font>
-          
-   <hr>
-   <br>
-   <br>
-
-    
-   <form id="currencyForm">
-
-        <FIELDSET class="field_set">
-        
-         <legend><b>CALCULATE HERE</b></legend>
-         <br>
-         <label for="amount" class=".headingofenterofamount">Enter your amount:</label>
-         <input type="text" id="amount" placeholder="0">
-<br>
-
-        <label for="from" >CONVERT FROM:</label>
-        <select name="CONVERT FROM" id="selector" title="convertfrom">
-            <option value="AUD">Australian Dollar (AUD)</option>
-            <option value="BDT">Bangladeshi Taka (BDT)</option>
-            <option value="BRL">Brazilian Real (BRL)</option>
-            <option value="BGN">Bulgarian Lev (BGN)</option>
-            <option value="CAD">Canadian Dollar (CAD)</option>
-            <option value="XAF">Central African CFA Franc (XAF)</option>
-            <option value="CLP">Chilean Peso (CLP)</option>
-            <option value="CNY">Chinese Yuan (CNY)</option>
-            <option value="CZK">Czech Koruna (CZK)</option>
-            <option value="DKK">Danish Krone (DKK)</option>
-            <option value="EGP">Egyptian Pound (EGP)</option>
-            <option value="EUR">Euro (EUR)</option>
-            <option value="HKD">Hong Kong Dollar (HKD)</option>
-            <option value="INR">Indian Rupee (INR)</option>
-            <option value="IDR">Indonesian Rupiah (IDR)</option>
-            <option value="IRR">Iranian Rial (IRR)</option>
-            <option value="IQD">Iraqi Dinar (IQD)</option>
-            <option value="JMD">Jamaican Dollar (JMD)</option>
-            <option value="JPY">Japanese Yen (JPY)</option>
-            <option value="KWD">Kuwaiti Dinar (KWD)</option>
-            <option value="MUR">Mauritian Rupee (MUR)</option>
-            <option value="MMK">Myanmar Kyat (MMK)</option>
-            <option value="NPR">Nepalese Rupee (NPR)</option>
-            <option value="NZD">New Zealand Dollar (NZD)</option>
-            <option value="PKR">Pakistan Rupee (PKR)</option>
-            <option value="PHP">Philippine Peso (PHP)</option>
-            <option value="QAR">Qatari Rial (QAR)</option>
-            <option value="RUB">Russian Ruble (RUB)</option>
-            <option value="SAR">Saudi Riyal (SAR)</option>
-            <option value="SGD">Singapore Dollar (SGD)</option>
-            <option value="ZAR">South African Rand (ZAR)</option>
-            <option value="KRW">South Korean Won (KRW)</option>
-            <option value="LKR">Sri Lankan Rupee (LKR)</option>
-            <option value="CHF">Swiss Franc (CHF)</option>
-            <option value="SYP">Syrian Pound (SYP)</option>
-            <option value="TWD">Taiwan Dollar (TWD)</option>
-            <option value="THB">Thai Baht (THB)</option>
-            <option value="TRY">Turkish Lira (TRY)</option>
-            <option value="TMT">Turkmenistan Manat (TMT)</option>
-            <option value="USD">United States Dollar (USD)</option>
-            <option value="UGX">Ugandan Shilling (UGX)</option>
-            <option value="UAH">Ukrainian Hryvnia (UAH)</option>
-            <option value="VND">Vietnamese Dong (VND)</option>
-            <option value="YER">Yemeni Rial (YER)</option>
-            <option value="ZMW">Zambian Kwacha (ZMW)</option>
-                     </select>
-                     &emsp;
-<label for="to">CONVERT TO:</label>
-              <select name="CONVERT TO" id="selector1" title="convertto">
-                <option value="AUD">Australian Dollar (AUD)</option>
-                <option value="BDT">Bangladeshi Taka (BDT)</option>
-                <option value="BRL">Brazilian Real (BRL)</option>
-                <option value="BGN">Bulgarian Lev (BGN)</option>
-                <option value="CAD">Canadian Dollar (CAD)</option>
-                <option value="XAF">Central African CFA Franc (XAF)</option>
-                <option value="CLP">Chilean Peso (CLP)</option>
-                <option value="CNY">Chinese Yuan (CNY)</option>
-                <option value="CZK">Czech Koruna (CZK)</option>
-                <option value="DKK">Danish Krone (DKK)</option>
-                <option value="EGP">Egyptian Pound (EGP)</option>
-                <option value="EUR">Euro (EUR)</option>
-                <option value="HKD">Hong Kong Dollar (HKD)</option>
-                <option value="INR">Indian Rupee (INR)</option>
-                <option value="IDR">Indonesian Rupiah (IDR)</option>
-                <option value="IRR">Iranian Rial (IRR)</option>
-                <option value="IQD">Iraqi Dinar (IQD)</option>
-                <option value="JMD">Jamaican Dollar (JMD)</option>
-                <option value="JPY">Japanese Yen (JPY)</option>
-                <option value="KWD">Kuwaiti Dinar (KWD)</option>
-                <option value="MUR">Mauritian Rupee (MUR)</option>
-                <option value="MMK">Myanmar Kyat (MMK)</option>
-                <option value="NPR">Nepalese Rupee (NPR)</option>
-                <option value="NZD">New Zealand Dollar (NZD)</option>
-                <option value="PKR">Pakistan Rupee (PKR)</option>
-                <option value="PHP">Philippine Peso (PHP)</option>
-                <option value="QAR">Qatari Rial (QAR)</option>
-                <option value="RUB">Russian Ruble (RUB)</option>
-                <option value="SAR">Saudi Riyal (SAR)</option>
-                <option value="SGD">Singapore Dollar (SGD)</option>
-                <option value="ZAR">South African Rand (ZAR)</option>
-                <option value="KRW">South Korean Won (KRW)</option>
-                <option value="LKR">Sri Lankan Rupee (LKR)</option>
-                <option value="CHF">Swiss Franc (CHF)</option>
-                <option value="SYP">Syrian Pound (SYP)</option>
-                <option value="TWD">Taiwan Dollar (TWD)</option>
-                <option value="THB">Thai Baht (THB)</option>
-                <option value="TND">Tunisian Dinar (TND)</option>
-                <option value="TRY">Turkish Lira (TRY)</option>
-                <option value="TMT">Turkmenistan Manat (TMT)</option>
-                <option value="USD">United States Dollar (USD)</option>
-                <option value="UGX">Ugandan Shilling (UGX)</option>
-                <option value="UAH">Ukrainian Hryvnia (UAH)</option>
-                <option value="VND">Vietnamese Dong (VND)</option>
-                <option value="YER">Yemeni Rial (YER)</option>
-                <option value="ZMW">Zambian Kwacha (ZMW)</option>                
-                     </select>
-
-<br>
-
-                     <button type="button" class="cvt">
-                         CONVERT
-                     </button>
-&emsp;
-<button type="reset">
-RESET
-</button>
-
-<br>
-<br>
-<br>
-<br>
-
-<div id="finalAmount" class="text-center">
-
-<h2>Converted Amount :
- <span class="finalValue">
- </span>
-</h2>
-</div>
-</FIELDSET>
-<br>
-<br>
-<br>
-<br>
-</form>
-</section>
-
-</div>  
-
-</body>
+  </body>
 </html>
